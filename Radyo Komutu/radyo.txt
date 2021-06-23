@@ -1,0 +1,280 @@
+{
+  "name": "radyo",
+  "permissions": "NONE",
+  "restriction": "1",
+  "_id": "xtAni",
+  "actions": [
+    {
+      "comment": "Komut Alp tarafından hazırlanıp Vandallik#0001 tarafından düzenlenmiştir. Önceki komut kaybolduğu için tekrar atıyorum.",
+      "color": "#000000",
+      "name": "Comment"
+    },
+    {
+      "server": "0",
+      "varName": "",
+      "storage": "1",
+      "varName2": "botmem",
+      "name": "Get Bot as Member"
+    },
+    {
+      "member": "2",
+      "varName": "botmem",
+      "info": "16",
+      "storage": "1",
+      "varName2": "memav",
+      "name": "Store Member Info"
+    },
+    {
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "3",
+      "iffalseVal": "5",
+      "name": "Check is Bot in Voice Channel"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "info": "19",
+      "storage": "1",
+      "varName2": "cvc",
+      "name": "Store Member Info"
+    },
+    {
+      "member": "2",
+      "varName": "botmem",
+      "info": "19",
+      "storage": "1",
+      "varName2": "bvc",
+      "name": "Store Member Info"
+    },
+    {
+      "channel": "3",
+      "varName": "cvc",
+      "info": "1",
+      "storage": "1",
+      "varName2": "cid",
+      "name": "Store Channel Info"
+    },
+    {
+      "channel": "3",
+      "varName": "bvc",
+      "info": "1",
+      "storage": "1",
+      "varName2": "ğid",
+      "name": "Store Channel Info"
+    },
+    {
+      "storage": "1",
+      "varName": "cid",
+      "comparison": "1",
+      "value": "tempVars(\"ğid\")",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "4",
+      "iffalseVal": "botbaşkakanalda",
+      "name": "Check Variable"
+    },
+    {
+      "info": "0",
+      "infoIndex": "1",
+      "storage": "1",
+      "varName": "1",
+      "name": "Store Command Params"
+    },
+    {
+      "condition": "0",
+      "comparison": "0",
+      "value": "0",
+      "iftrue": "2",
+      "iftrueVal": "23",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Parameters"
+    },
+    {
+      "storage": "1",
+      "varName": "1",
+      "comparison": "3",
+      "value": "20",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "2",
+      "iffalseVal": "23",
+      "name": "Check Variable"
+    },
+    {
+      "measurement": "1",
+      "value": "30",
+      "save": "1",
+      "restrict": "1",
+      "iftrue": "2",
+      "iftrueVal": "27",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "storage": "1",
+      "varName": "ksüre",
+      "name": "Set Time Restriction"
+    },
+    {
+      "code": " switch (parseInt(tempVars(\"1\"))) {\n   case 1: var t = \"PAL STATION\"; break;\n   case 2: var t = \"PLAY FM\"; break;\n   case 3: var t = \"POWER FM\"; break;\n   case 4: var t = \"POWER POP\"; break;\n   case 5: var t = \"POWERTÜRK FM\"; break;\n   case 6: var t = \"RADYO POP\"; break;\n   case 7: var t = \"RADYO SPOR\"; break;\n   case 8: var t = \"SLOW RADYO\"; break;\n   case 9: var t = \"SÜPER FM\"; break;\n   case 10: var t = \"MEGA FM\"; break;\n   case 11: var t = \"METRO FM\"; break;\n   case 12: var t = \"LİG RADYO\"; break;\n   case 13: var t = \"KRAL POP\"; break;\n   case 14: var t = \"JOY FM\"; break;\n   case 15: var t = \"İSTANBUL FM\"; break;\n   case 16: var t = \"BEST FM\"; break;\n   case 17: var t = \"NTV SPOR RADYO\"; break;\n   case 18: var t = \"RADYO SPOR\"; break;\n }\nthis.storeValue(t, 1, 'radyoad', cache);\n     ",
+      "behavior": "0",
+      "interpretation": "0",
+      "storage": "0",
+      "varName": "",
+      "VTypeSelect": "0",
+      "CVTypeValue": "",
+      "name": "Run Script"
+    },
+    {
+      "code": " switch (parseInt(tempVars(\"1\"))) {\n   case 1: var t = \"http://shoutcast.radyogrup.com:1020/;\"; break;\n   case 2: var t = \"http://live.playfm.com.tr:9050/;\"; break;\n   case 3: var t = \"http://powerfm.listenpowerapp.com/powerfm/mpeg/icecast.audio\"; break;\n   case 4: var t = \"http://powerpop.listenpowerapp.com/powerpop/mpeg/icecast.audio\"; break;\n   case 5: var t = \"http://mpegpowerturk.listenpowerapp.com/powerturk/mpeg/icecast.audio\"; break;\n   case 6: var t = \"http://80.radyopop.com/stream/1/\"; break;\n   case 7: var t = \"http://46.20.7.103:8040/;\"; break;\n   case 8: var t = \"http://yayindaslowradyo.net:5050/;\"; break;\n   case 9: var t = \"https://playerservices.streamtheworld.com/api/livestream-redirect/SUPER_FM.mp3\"; break;\n   case 10: var t = \"http://46.105.35.48:9346/;\"; break;\n   case 11: var t = \"https://17703.live.streamtheworld.com/METRO_FM.mp3\"; break;\n   case 12: var t = \"http://turkmedya.radyotvonline.com/turkmedya/ligradyo.stream/playlist.m3u8\"; break;\n   case 13: var t = \"http://kralpopwmp.radyotvonline.com:80/;\"; break;\n   case 14: var t = \"https://17703.live.streamtheworld.com/JOY_FM.mp3\"; break;\n   case 15: var t = \"http://45.32.154.169:9300/;\"; break;\n   case 16: var t = \"http://46.20.7.126/;stream.mp3\"; break;\n   case 17: var t = \"http://ntvsporwmp.radyotvonline.com/;\"; break;\n   case 18: var t = \"http://46.20.7.103:8040/;\"; break;\n }\nthis.storeValue(t, 1, 'radyolink', cache);\n     ",
+      "behavior": "0",
+      "interpretation": "0",
+      "storage": "0",
+      "varName": "",
+      "VTypeSelect": "0",
+      "CVTypeValue": "",
+      "name": "Run Script"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "name": "Join Voice Channel"
+    },
+    {
+      "volume": "70",
+      "name": "Set Audio Volume"
+    },
+    {
+      "url": "${tempVars(\"radyolink\")}",
+      "seek": "0",
+      "volume": "",
+      "passes": "1",
+      "bitrate": "",
+      "type": "1",
+      "name": "Play URL"
+    },
+    {
+      "title": "ÇALINIYOR : ${tempVars(\"radyoad\")}",
+      "author": "",
+      "color": "",
+      "url": "",
+      "authorIcon": "",
+      "authorUrl": "",
+      "imageUrl": "",
+      "thumbUrl": "${tempVars(\"memav\")}",
+      "timestamp": "false",
+      "debug": "false",
+      "text": "",
+      "year": "",
+      "month": "",
+      "day": "",
+      "hour": "",
+      "minute": "",
+      "second": "",
+      "storage": "1",
+      "varName": "ğ",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "ğ",
+      "message": "**Komutu 30 saniye sonra tekrar kullanabilirsin.**\n",
+      "name": "Set Embed Description"
+    },
+    {
+      "storage": "1",
+      "varName": "ğ",
+      "channel": "0",
+      "varName2": "",
+      "storage3": "0",
+      "varName3": "",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "messageContent": "",
+      "name": "Send Embed Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "title": "Radyo Seçim Menüsü",
+      "author": "",
+      "color": "RANDOM",
+      "url": "",
+      "authorIcon": "",
+      "authorUrl": "",
+      "imageUrl": "",
+      "thumbUrl": "${tempVars(\"memav\")}",
+      "timestamp": "false",
+      "debug": "false",
+      "text": "",
+      "year": "",
+      "month": "",
+      "day": "",
+      "hour": "",
+      "minute": "",
+      "second": "",
+      "storage": "1",
+      "varName": "remb",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "remb",
+      "message": "`!radyo 1   PAL STATION      `\n`!radyo 2   PLAY FM          `\n`!radyo 3   POWER FM         `\n`!radyo 4   POWER POP        `\n`!radyo 5   POWERTÜRK FM     `\n`!radyo 6   RADYO POP        `\n`!radyo 7   RADYO SPOR       `\n`!radyo 8   SLOW RADYO       `\n`!radyo 9   SÜPER FM         `\n`!radyo 10  MEGA FM          `\n`!radyo 11  METRO FM         `\n`!radyo 12  LİG RADYO        `\n`!radyo 13  KRAL POP         `\n`!radyo 14  JOY FM           `\n`!radyo 15  İSTANBUL FM      `\n`!radyo 16  BEST FM          `\n`!radyo 17  NTV SPOR RADYO   `\n`!radyo 18  RADYO SPOR       `",
+      "name": "Set Embed Description"
+    },
+    {
+      "storage": "1",
+      "varName": "remb",
+      "channel": "0",
+      "varName2": "",
+      "storage3": "0",
+      "varName3": "",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "messageContent": "",
+      "name": "Send Embed Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "Bu komutu zaten kullandınız. **${tempVars(\"ksüre\")}** saniye sonra tekrar kullanabilirsiniz.",
+      "storage": "0",
+      "varName2": "",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "anchor_id": "botbaşkakanalda",
+      "color": "#000000",
+      "description": "Bot Başka Kanalda",
+      "name": "Create Anchor"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "**Bot şu anda başka bir kanalda. Komutu o kanalda kullanın ya da botun işinin bitmesini bekleyin.**",
+      "storage": "0",
+      "varName2": "",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "comment": "Herhangi bir sorunuz varsa Vandallik#0001 ' e sorabilirsiniz. ",
+      "color": "#000000",
+      "name": "Comment"
+    }
+  ]
+}
